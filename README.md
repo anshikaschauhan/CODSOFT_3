@@ -26,4 +26,4 @@ A simple and responsive calculator built using HTML, CSS, and JavaScript. It per
 A basic calculator designed to demonstrate JavaScript functionality, DOM manipulation, and responsive web design.
 
 ## Author
-Anshika Chauhan
+Anshika Singh
