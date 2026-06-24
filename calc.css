@@ -1,0 +1,1257 @@
+/* ==========================================
+   SMARTCALC PRO
+   calc.css
+   Part 1
+========================================== */
+
+/* Google Font */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#6a11cb,#2575fc,#00c6ff,#6a11cb);
+    background-size:400% 400%;
+    animation:gradientMove 15s ease infinite;
+}
+
+/* Animated Gradient */
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ==========================================
+   Floating Background
+========================================== */
+
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+.background span{
+
+    position:absolute;
+
+    display:block;
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    animation:float 20s linear infinite;
+
+}
+
+.background span:nth-child(1){
+    left:10%;
+    width:120px;
+    height:120px;
+    animation-duration:18s;
+}
+
+.background span:nth-child(2){
+    left:30%;
+    width:60px;
+    height:60px;
+    animation-duration:14s;
+}
+
+.background span:nth-child(3){
+    left:55%;
+    width:150px;
+    height:150px;
+    animation-duration:25s;
+}
+
+.background span:nth-child(4){
+    left:70%;
+    width:70px;
+    height:70px;
+    animation-duration:16s;
+}
+
+.background span:nth-child(5){
+    left:85%;
+    width:100px;
+    height:100px;
+    animation-duration:20s;
+}
+
+.background span:nth-child(6){
+    left:45%;
+    width:90px;
+    height:90px;
+    animation-duration:22s;
+}
+
+.background span:nth-child(7){
+    left:5%;
+    width:60px;
+    height:60px;
+    animation-duration:15s;
+}
+
+@keyframes float{
+
+    from{
+        transform:translateY(110vh) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(-120vh) rotate(720deg);
+    }
+
+}
+
+/* ==========================================
+   Common Pages
+========================================== */
+
+.page{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:fadeIn .7s;
+
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   Glass Effect
+========================================== */
+
+.glass{
+
+    width:420px;
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+/* Welcome Page */
+
+.logo{
+
+    font-size:80px;
+
+    margin-bottom:20px;
+
+    color:#ffffff;
+
+}
+
+.glass h1{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.glass p{
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+    opacity:.9;
+
+}
+
+/* Buttons */
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    background:#ffffff;
+
+    color:#2575fc;
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px) scale(1.05);
+
+    box-shadow:0 12px 25px rgba(255,255,255,.3);
+
+}
+
+/* Login Input */
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:20px 0;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    font-size:17px;
+
+}
+/* ==========================================
+   Loading Screen
+========================================== */
+
+.loader{
+
+    width:100%;
+
+    height:22px;
+
+    margin:25px 0;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:linear-gradient(90deg,#00ff88,#00d4ff);
+
+    transition:.25s;
+
+}
+
+#loadingText{
+
+    margin-top:15px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   Login Page
+========================================== */
+
+.login-box{
+
+    width:420px;
+
+}
+
+.userIcon{
+
+    font-size:85px;
+
+    margin-bottom:20px;
+
+    color:white;
+
+}
+
+.login-box h2{
+
+    margin-bottom:10px;
+
+}
+
+.login-box button{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   Navigation Bar
+========================================== */
+
+nav{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:20px 50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+nav h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+nav button{
+
+    padding:10px 28px;
+
+}
+
+/* ==========================================
+   Dashboard
+========================================== */
+
+.dashboard{
+
+    width:92%;
+
+    max-width:1200px;
+
+    margin-top:90px;
+
+}
+
+.welcomeCard{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.welcomeCard h1{
+
+    font-size:38px;
+
+    margin-bottom:12px;
+
+}
+
+.welcomeCard p{
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+}
+
+#clock{
+
+    font-size:45px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================================
+   Dashboard Cards
+========================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.card{
+
+    padding:35px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    background:rgba(255,255,255,.2);
+
+}
+
+.card i{
+
+    font-size:55px;
+
+    margin-bottom:18px;
+
+    color:#ffffff;
+
+}
+
+.card h3{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   Card Animation
+========================================== */
+
+.card{
+
+    animation:pop .7s;
+
+}
+
+@keyframes pop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+   Calculator Section
+========================================== */
+
+.calculator{
+
+    width:420px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+}
+
+.topBar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.topBar h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.topBar button{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    padding:0;
+
+}
+
+/* ==========================================
+   Display
+========================================== */
+
+#display{
+
+    width:100%;
+
+    height:75px;
+
+    margin-bottom:25px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+    text-align:right;
+
+    padding:20px;
+
+    font-size:32px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    outline:none;
+
+}
+
+/* ==========================================
+   Calculator Buttons
+========================================== */
+
+.buttons{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+.buttons button{
+
+    height:65px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.18);
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+.buttons button:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.28);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+}
+
+.buttons button:active{
+
+    transform:scale(.95);
+
+}
+
+/* Operator Buttons */
+
+.operator{
+
+    background:#ff9800 !important;
+
+    color:white;
+
+}
+
+.operator:hover{
+
+    background:#ffb74d !important;
+
+}
+
+/* Equal Button */
+
+.equal{
+
+    background:#00c853 !important;
+
+    color:white;
+
+    grid-column:span 2;
+
+}
+
+.equal:hover{
+
+    background:#00e676 !important;
+
+}
+
+/* ==========================================
+   Scientific Panel
+========================================== */
+
+.scientific{
+
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+
+}
+
+.scientific button{
+
+    height:55px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.scientific button:hover{
+
+    background:#00bcd4;
+
+    transform:translateY(-3px);
+
+}
+
+/* Hidden State */
+
+.scientific.hide{
+
+    display:none;
+
+}
+
+/* ==========================================
+   About Page
+========================================== */
+
+.aboutBox{
+
+    width:650px;
+
+    max-width:90%;
+
+}
+
+.aboutBox h1{
+
+    margin-bottom:20px;
+
+}
+
+.aboutBox p{
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.featureList{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    text-align:left;
+
+    margin-bottom:30px;
+
+}
+
+.featureList div{
+
+    background:rgba(255,255,255,.12);
+
+    padding:12px;
+
+    border-radius:12px;
+
+}
+
+/* ==========================================
+   Dark Theme
+========================================== */
+
+body.dark{
+
+    background:linear-gradient(-45deg,#111,#222,#333,#111);
+
+}
+
+body.dark .glass,
+
+body.dark .calculator,
+
+body.dark .card,
+
+body.dark nav,
+
+body.dark .welcomeCard{
+
+    background:rgba(30,30,30,.65);
+
+    color:white;
+
+}
+
+body.dark input,
+
+body.dark #display{
+
+    background:#1f1f1f;
+
+    color:white;
+
+}
+
+body.dark .buttons button,
+
+body.dark .scientific button{
+
+    background:#2b2b2b;
+
+}
+
+body.dark .buttons button:hover{
+
+    background:#3b3b3b;
+
+}
+/* ==========================================
+   Theme Transition
+========================================== */
+
+body,
+.glass,
+.calculator,
+.card,
+button,
+input,
+nav,
+.welcomeCard{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   Page Animation Classes
+========================================== */
+
+.fadeIn{
+
+    animation:fadePage .6s ease forwards;
+
+}
+
+.fadeOut{
+
+    animation:fadeOut .5s ease forwards;
+
+}
+
+@keyframes fadePage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   Floating Effect
+========================================== */
+
+.glass,
+.calculator,
+.card{
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ==========================================
+   Ripple Click Effect
+========================================== */
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+button::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.4);
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.45s;
+
+}
+
+button:active::after{
+
+    width:250px;
+
+    height:250px;
+
+}
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#222;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#888;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#bbb;
+
+}
+
+/* ==========================================
+   Responsive Design
+========================================== */
+
+@media(max-width:1100px){
+
+.dashboard{
+
+width:95%;
+
+}
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+
+padding:20px;
+
+overflow:auto;
+
+}
+
+.glass{
+
+width:95%;
+
+padding:30px;
+
+}
+
+.calculator{
+
+width:95%;
+
+padding:20px;
+
+}
+
+.aboutBox{
+
+width:95%;
+
+}
+
+.featureList{
+
+grid-template-columns:1fr;
+
+}
+
+.buttons button{
+
+height:60px;
+
+font-size:20px;
+
+}
+
+.scientific{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+nav{
+
+padding:15px 20px;
+
+}
+
+nav h2{
+
+font-size:22px;
+
+}
+
+.welcomeCard h1{
+
+font-size:30px;
+
+}
+
+#clock{
+
+font-size:34px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.glass h1{
+
+font-size:32px;
+
+}
+
+.logo{
+
+font-size:65px;
+
+}
+
+#display{
+
+font-size:25px;
+
+height:65px;
+
+}
+
+.buttons{
+
+gap:10px;
+
+}
+
+.buttons button{
+
+height:55px;
+
+font-size:18px;
+
+}
+
+.scientific button{
+
+height:50px;
+
+font-size:16px;
+
+}
+
+.topBar h2{
+
+font-size:22px;
+
+}
+
+}
+
+/* ==========================================
+   Utility Classes
+========================================== */
+
+.hidden{
+
+display:none !important;
+
+}
+
+.show{
+
+display:flex !important;
+
+}
+
+.center{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.text-center{
+
+text-align:center;
+
+}
+
+/* ==========================================
+   End of SmartCalc Pro Stylesheet
+========================================== */
