@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartCalc Pro</title>
+
+    <link rel="stylesheet" href="calc.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- ================= WELCOME PAGE ================= -->
+
+    <section id="welcomePage" class="page active">
+
+        <div class="glass">
+
+            <i class="fa-solid fa-calculator logo"></i>
+
+            <h1>SmartCalc Pro</h1>
+
+            <p>
+                Modern • Interactive • Scientific Calculator
+            </p>
+
+            <button id="startBtn">
+
+                Start
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SPLASH SCREEN ================= -->
+
+    <section id="loadingPage" class="page">
+
+        <div class="glass">
+
+            <h2>Preparing Calculator...</h2>
+
+            <div class="loader">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+            <h3 id="loadingText">0%</h3>
+
+        </div>
+
+    </section>
+
+    <!-- ================= LOGIN ================= -->
+
+    <section id="loginPage" class="page">
+
+        <div class="glass login-box">
+
+            <i class="fa-solid fa-user-circle userIcon"></i>
+
+            <h2>Welcome</h2>
+
+            <p>Enter your name to continue</p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Your Name">
+
+            <button id="continueBtn">
+
+                Continue
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboardPage" class="page">
+
+        <nav>
+
+            <h2>
+
+                <i class="fa-solid fa-calculator"></i>
+
+                SmartCalc
+
+            </h2>
+
+            <button id="logoutBtn">
+
+                Logout
+
+            </button>
+
+        </nav>
+
+        <div class="dashboard">
+
+            <div class="welcomeCard">
+
+                <h1 id="greeting">
+
+                    Hello User 👋
+
+                </h1>
+
+                <p id="todayDate"></p>
+
+                <h2 id="clock"></h2>
+
+            </div>
+
+            <div class="cards">
+
+                <div class="card" id="openCalculator">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    <h3>Calculator</h3>
+
+                </div>
+
+                <div class="card" id="toggleScientific">
+
+                    <i class="fa-solid fa-square-root-variable"></i>
+
+                    <h3>Scientific Mode</h3>
+
+                </div>
+
+                <div class="card" id="aboutBtn">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <h3>About</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CALCULATOR ================= -->
+
+    <section id="calculatorPage" class="page">
+
+        <div class="calculator">
+
+            <div class="topBar">
+
+                <button id="backDashboard">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </button>
+
+                <h2>Calculator</h2>
+
+                <button id="themeBtn">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+            </div>
+
+            <input
+                type="text"
+                id="display"
+                readonly>
+
+            <!-- Basic Buttons -->
+
+            <div class="buttons">
+
+                <button class="operator">AC</button>
+
+                <button class="operator">⌫</button>
+
+                <button class="operator">%</button>
+
+                <button class="operator">/</button>
+
+                <button>7</button>
+
+                <button>8</button>
+
+                <button>9</button>
+
+                <button class="operator">*</button>
+
+                <button>4</button>
+
+                <button>5</button>
+
+                <button>6</button>
+
+                <button class="operator">-</button>
+
+                <button>1</button>
+
+                <button>2</button>
+
+                <button>3</button>
+
+                <button class="operator">+</button>
+
+                <button>0</button>
+
+                <button>.</button>
+
+                <button class="equal">=</button>
+
+            </div>
+
+            <!-- Scientific Buttons -->
+
+            <div class="scientific" id="scientificPanel">
+
+                <button>√</button>
+
+                <button>x²</button>
+
+                <button>sin</button>
+
+                <button>cos</button>
+
+                <button>tan</button>
+
+                <button>log</button>
+
+                <button>π</button>
+
+                <button>e</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="aboutPage" class="page">
+
+        <div class="glass aboutBox">
+
+            <h1>
+
+                About SmartCalc Pro
+
+            </h1>
+
+            <p>
+
+                SmartCalc Pro is a modern calculator web application developed
+                using HTML, CSS and JavaScript.
+
+            </p>
+
+            <div class="featureList">
+
+                <div>
+
+                    ✔ Animated Welcome Screen
+
+                </div>
+
+                <div>
+
+                    ✔ Loading Screen
+
+                </div>
+
+                <div>
+
+                    ✔ User Login
+
+                </div>
+
+                <div>
+
+                    ✔ Dashboard
+
+                </div>
+
+                <div>
+
+                    ✔ Basic Calculator
+
+                </div>
+
+                <div>
+
+                    ✔ Scientific Calculator
+
+                </div>
+
+                <div>
+
+                    ✔ Keyboard Support
+
+                </div>
+
+                <div>
+
+                    ✔ Responsive Design
+
+                </div>
+
+                <div>
+
+                    ✔ Glassmorphism UI
+
+                </div>
+
+                <div>
+
+                    ✔ Dark / Light Theme
+
+                </div>
+
+            </div>
+
+            <button id="backHome">
+
+                Back
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="calc.js"></script>
+
+</body>
+
+</html>
