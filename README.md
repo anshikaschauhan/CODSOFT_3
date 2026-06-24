@@ -20,7 +20,7 @@ A simple and responsive calculator built using HTML, CSS, and JavaScript. It per
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/calculator.git
-Open index.html in your browser.
+2. Open index.html in your browser.
 Project Preview
 A basic calculator designed to demonstrate JavaScript functionality, DOM manipulation, and responsive web design.
 Author
